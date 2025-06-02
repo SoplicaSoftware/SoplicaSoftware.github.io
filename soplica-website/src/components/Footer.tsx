@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@heroui/button";
 import { Github, Linkedin, Twitter, Mail, Heart } from "lucide-react";

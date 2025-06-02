@@ -1,28 +1,15 @@
-import { useState, useEffect } from "react";
-import {
-  Navbar as HeroUINavbar,
-  NavbarContent,
-  NavbarItem,
-} from "@heroui/navbar";
 import { Button } from "@heroui/button";
 import { motion } from "framer-motion";
 import { Github } from "lucide-react";
 
 import { ThemeSwitch } from "@/components/theme-switch";
+import {
+  Navbar as HeroUINavbar,
+  NavbarContent,
+  NavbarItem,
+} from "@heroui/navbar";
 
 export const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      setIsScrolled(scrollTop > 10);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
