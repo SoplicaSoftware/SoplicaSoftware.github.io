@@ -181,7 +181,6 @@ const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
                       value={currentUrl}
                       size={160}
                       level="M"
-                      includeMargin={true}
                     />
                   </div>
                   <Divider className="my-4" />
