@@ -154,12 +154,7 @@ const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
                       <span className="text-sm text-foreground-600">Last Updated:</span>
                       <span className="text-sm font-medium text-foreground">June 4, 2025</span>
                     </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-foreground-600">Direct Link:</span>
-                      <span className="text-sm font-medium text-primary">
-                        {window.location.origin}/{resumeFileName}
-                      </span>
-                    </div>
+                    
                   </div>
                 </CardBody>
               </Card>
