@@ -27,7 +27,7 @@ interface ResumeModalProps {
 const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
   const [currentUrl, setCurrentUrl] = useState("");
   const resumeFileName = "Kacper-Rogóż-Resume-20250603-1.pdf";
-  const resumeUrl = `/resume`;
+  const resumeUrl = `/${resumeFileName}`;
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -157,7 +157,7 @@ const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-foreground-600">Direct Link:</span>
                       <span className="text-sm font-medium text-primary">
-                        {window.location.origin}/resume
+                        {window.location.origin}/{resumeFileName}
                       </span>
                     </div>
                   </div>
