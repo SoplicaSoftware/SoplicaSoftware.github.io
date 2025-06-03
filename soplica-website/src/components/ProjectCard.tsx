@@ -2,11 +2,21 @@ import { Card, CardBody } from "@heroui/card";
 import { Button } from "@heroui/button";
 import { Chip } from "@heroui/chip";
 import { ExternalLink, Eye } from "lucide-react";
-import { Project } from "./ProjectCarousel";
+
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  technologies: string[];
+  liveUrl?: string;
+  features: string[];
+  challenges: string;
+  outcome: string;
+}
 
 interface ProjectCardProps {
   project: Project;
-  onViewDetails: (project: Project) => void;
   getProjectSlug: (title: string) => string;
 }
 
@@ -31,7 +41,7 @@ const typeColor: Record<string, string> = {
   "Tailwind CSS": "bg-gradient-to-br from-primary-200 to-primary-400 text-primary-900 border-primary-500",
 };
 
-const ProjectCard = ({ project, onViewDetails, getProjectSlug }: ProjectCardProps) => {
+const ProjectCard = ({ project, getProjectSlug }: ProjectCardProps) => {
   const mainType = project.technologies[0] || "Project";
   const typeClass = typeColor[mainType] || "bg-gradient-to-br from-default-200 to-default-400 text-default-900 border-default-500";
   
@@ -81,7 +91,7 @@ const ProjectCard = ({ project, onViewDetails, getProjectSlug }: ProjectCardProp
         {/* Technologies as energy types - moved above sections */}
         <div className="px-4 pb-3 pt-2">
           <div className="flex flex-wrap gap-1 justify-center">
-            {project.technologies.slice(0, 4).map((tech, index) => (
+            {project.technologies.slice(0, 4).map((tech: string, index: number) => (
               <Chip
                 key={index}
                 className="bg-gradient-to-br from-content2 to-content3 border-divider text-foreground font-semibold text-xs"
@@ -100,14 +110,14 @@ const ProjectCard = ({ project, onViewDetails, getProjectSlug }: ProjectCardProp
           <div className="bg-content2/50 rounded-lg p-3 border border-divider">
             <div className="flex items-center gap-2 mb-2">
               <div className="flex gap-1">
-                {project.technologies.slice(0, 3).map((_, idx) => (
+                {project.technologies.slice(0, 3).map((_: string, idx: number) => (
                   <div key={idx} className="w-4 h-4 rounded-full bg-gradient-to-br from-secondary to-warning border border-warning-400" />
                 ))}
               </div>
               <span className="font-bold text-sm text-foreground">Key Features</span>
             </div>
             <ul className="text-xs text-foreground-600 leading-tight space-y-1">
-              {project.features.slice(0, 3).map((feature, idx) => (
+              {project.features.slice(0, 3).map((feature: string, idx: number) => (
                 <li key={idx} className="flex items-start">
                   <span className="w-1 h-1 bg-secondary rounded-full mt-1.5 mr-2 flex-shrink-0" />
                   {feature}
@@ -170,4 +180,4 @@ const ProjectCard = ({ project, onViewDetails, getProjectSlug }: ProjectCardProp
 };
 
 export default ProjectCard;
-// ...add a .pokemon-card class in your global CSS for extra flair if you wish...
+export type { Project };

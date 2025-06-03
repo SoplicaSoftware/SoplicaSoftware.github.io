@@ -1,34 +1,11 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@heroui/button";
-import {
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  useDisclosure,
-} from "@heroui/modal";
-import { Chip } from "@heroui/chip";
-import { ChevronLeft, ChevronRight, ExternalLink, Eye } from "lucide-react";
-import ProjectCard from "./ProjectCard";
-
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  technologies: string[];
-  liveUrl?: string;
-  features: string[];
-  challenges: string;
-  outcome: string;
-}
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import ProjectCard, { type Project } from "./ProjectCard";
 
 const ProjectCarousel = () => {
   const [currentProject, setCurrentProject] = useState(0);
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const projects: Project[] = [
     {
       id: 1,
@@ -173,10 +150,6 @@ const ProjectCarousel = () => {
     setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length);
   };
 
-  const openProjectModal = (project: Project) => {
-    setSelectedProject(project);
-    onOpen();
-  };
   const getProjectSlug = (title: string) => {
     return title
       .toLowerCase()
@@ -240,7 +213,6 @@ const ProjectCarousel = () => {
             >
               <ProjectCard
                 project={projects[currentProject]}
-                onViewDetails={openProjectModal}
                 getProjectSlug={getProjectSlug}
               />
             </motion.div>
@@ -278,95 +250,6 @@ const ProjectCarousel = () => {
             />
           ))}
         </div>
-
-        {/* Project Detail Modal */}
-        <Modal
-          classNames={{
-            body: "py-6",
-            backdrop: "bg-black/50 backdrop-opacity-40",
-            base: "border-divider bg-content1",
-            header: "border-b-1 border-divider",
-            footer: "border-t-1 border-divider",
-          }}
-          isOpen={isOpen}
-          size="3xl"
-          onOpenChange={onOpenChange}
-        >
-          <ModalContent>
-            {(onClose) => (
-              <>
-                <ModalHeader className="flex flex-col gap-1">
-                  <h3 className="text-2xl font-bold">
-                    {selectedProject?.title}
-                  </h3>
-                  <p className="text-foreground-500">
-                    {selectedProject?.description}
-                  </p>
-                </ModalHeader>
-                <ModalBody>
-                  {selectedProject && (
-                    <div className="space-y-6">
-                      <img
-                        alt={selectedProject.title}
-                        className="w-full h-64 object-cover rounded-lg"
-                        src={selectedProject.image}
-                      />
-
-                      <div>
-                        <h4 className="text-lg font-semibold mb-3">
-                          Key Features:
-                        </h4>
-                        <ul className="space-y-2">
-                          {selectedProject.features.map((feature, index) => (
-                            <li
-                              key={index}
-                              className="flex items-start text-foreground-600"
-                            >
-                              <span className="w-2 h-2 bg-secondary rounded-full mt-2 mr-3 flex-shrink-0" />
-                              {feature}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div>
-                        <h4 className="text-lg font-semibold mb-3">
-                          Technical Challenges:
-                        </h4>
-                        <p className="text-foreground-600">
-                          {selectedProject.challenges}
-                        </p>
-                      </div>
-
-                      <div>
-                        <h4 className="text-lg font-semibold mb-3">Outcome:</h4>
-                        <p className="text-foreground-600">
-                          {selectedProject.outcome}
-                        </p>
-                      </div>
-                    </div>
-                  )}
-                </ModalBody>{" "}
-                <ModalFooter>
-                  <Button color="danger" variant="light" onPress={onClose}>
-                    Close
-                  </Button>
-                  {selectedProject?.liveUrl && (
-                    <Button
-                      as="a"
-                      color="secondary"
-                      href={selectedProject?.liveUrl}
-                      startContent={<ExternalLink size={16} />}
-                      target="_blank"
-                    >
-                      Visit Project
-                    </Button>
-                  )}
-                </ModalFooter>
-              </>
-            )}
-          </ModalContent>
-        </Modal>
       </div>
     </section>
   );
