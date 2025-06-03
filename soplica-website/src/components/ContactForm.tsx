@@ -173,11 +173,10 @@ const ContactForm = () => {
               </p>
             </div>
 
-            {/* Contact Details */}
-            <div className="space-y-4">
+            {/* Contact Details */}            <div className="space-y-4">
               <div className="flex items-center text-foreground-600">
                 <Mail className="w-5 h-5 text-danger mr-4" />
-                <span>john.developer@email.com</span>
+                <span>soplicasoftwaresolutions@gmail.com</span>
               </div>
               <div className="flex items-center text-foreground-600">
                 <MessageSquare className="w-5 h-5 text-danger mr-4" />

@@ -6,25 +6,25 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: <Github size={24} />,
-      href: "https://github.com/johndeveloper",
+      href: "https://github.com/SoplicaSoftware",
       label: "GitHub",
       color: "hover:text-foreground-300",
     },
     {
       icon: <Linkedin size={24} />,
-      href: "https://linkedin.com/in/johndeveloper",
+      href: "https://www.linkedin.com/in/soplica-software",
       label: "LinkedIn",
       color: "hover:text-primary",
     },
     {
       icon: <Twitter size={24} />,
-      href: "https://twitter.com/johndeveloper",
-      label: "Twitter",
+      href: "https://soplicaindustries.github.io",
+      label: "Website",
       color: "hover:text-secondary",
     },
     {
       icon: <Mail size={24} />,
-      href: "mailto:john.developer@email.com",
+      href: "mailto:soplicasoftwaresolutions@gmail.com",
       label: "Email",
       color: "hover:text-success",
     },
@@ -59,11 +59,12 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              John Developer
+              Kacper Rogóż
             </h3>
             <p className="text-foreground-600 leading-relaxed">
-              Passionate full-stack developer creating beautiful, functional web applications
-              with modern technologies and clean code.
+              Full-stack developer focused on building complete software solutions
+              — from idea to production. Specializing in SaaS platforms, desktop
+              applications, and automation systems.
             </p>
             <div className="flex items-center text-foreground-500">
               <span>Made with</span>
@@ -80,7 +81,9 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-lg font-semibold text-foreground mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold text-foreground mb-4">
+              Quick Links
+            </h4>
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
@@ -103,9 +106,12 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-lg font-semibold text-foreground mb-4">Let&apos;s Connect</h4>
+            <h4 className="text-lg font-semibold text-foreground mb-4">
+              Let&apos;s Connect
+            </h4>
             <p className="text-foreground-600 mb-6">
-              Feel free to reach out for collaborations or just a friendly hello!
+              Feel free to reach out for collaborations or just a friendly
+              hello!
             </p>
 
             {/* Social Icons */}
@@ -151,7 +157,7 @@ const Footer = () => {
           viewport={{ once: true }}
         >
           <div className="text-foreground-500 text-sm">
-            © {new Date().getFullYear()} John Developer. All rights reserved.
+            © {new Date().getFullYear()} Kacper Rogóż. All rights reserved.
           </div>
 
           <div className="flex space-x-6 text-sm text-foreground-500">

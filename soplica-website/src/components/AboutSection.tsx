@@ -7,23 +7,23 @@ const AboutSection = () => {
   const skills = [
     {
       icon: <Code size={24} />,
-      title: "Frontend Development",
-      description: "React, Vue.js, TypeScript, Tailwind CSS",
+      title: "Full-Stack Development",
+      description: "C#, ASP.NET, React, TypeScript, Python",
     },
     {
       icon: <Globe size={24} />,
-      title: "Backend Development",
-      description: "Node.js, Python, Express, FastAPI",
+      title: "SaaS & Web Platforms",
+      description: "Real estate platforms, Web scrapers, APIs",
     },
     {
       icon: <Smartphone size={24} />,
-      title: "Mobile Development",
-      description: "React Native, Flutter",
+      title: "Desktop Applications",
+      description: "Audio technology tools, Internal systems",
     },
     {
       icon: <Palette size={24} />,
-      title: "UI/UX Design",
-      description: "Figma, Adobe XD, Design Systems",
+      title: "Infrastructure & Automation",
+      description: "Cloud services, System administration, Workflow automation",
     },
   ];
 
@@ -50,7 +50,10 @@ const AboutSection = () => {
   };
 
   return (
-    <section id="about" className="py-20 px-4 bg-gradient-to-b from-background to-content1">
+    <section
+      id="about"
+      className="py-20 px-4 bg-gradient-to-b from-background to-content1"
+    >
       <div className="max-w-6xl mx-auto">
         <motion.div
           className="text-center mb-16"
@@ -88,20 +91,15 @@ const AboutSection = () => {
             </div>
 
             <h3 className="text-2xl font-semibold text-foreground mb-4">
-              Passionate Developer with 5+ Years Experience
+              Freelance Software Engineer | Startup Enthusiast
             </h3>
 
             <p className="text-foreground-600 text-lg leading-relaxed mb-6">
-              I&apos;m a full-stack developer who loves creating beautiful, functional web
-              applications. My journey started with curiosity about how websites work, and
-              it has evolved into a passion for crafting exceptional user experiences.
+              {`I'm a full-stack developer with a strong focus on building complete software solutions — from idea to production. I work on web apps, desktop applications, automation, and setting up the systems behind them, like APIs, cloud services, and integrations. As a freelancer, I've worked on many real-world projects that are now live and used by clients.`}
             </p>
 
             <p className="text-foreground-600 text-lg leading-relaxed">
-              When I&apos;m not coding, you can find me exploring new technologies,
-              contributing to open-source projects, or sharing knowledge with the developer
-              community. I believe in continuous learning and staying updated with the
-              latest industry trends.
+              {`When I'm not coding, I enjoy mountain biking and sailing — they help me stay focused and balanced. I'm driven, reliable, and always focused on good communication and long-term results.`}
             </p>
           </motion.div>
 
@@ -126,7 +124,9 @@ const AboutSection = () => {
                     <h4 className="text-foreground font-semibold text-lg mb-2">
                       {skill.title}
                     </h4>
-                    <p className="text-foreground-500 text-sm">{skill.description}</p>
+                    <p className="text-foreground-500 text-sm">
+                      {skill.description}
+                    </p>
                   </CardBody>
                 </Card>
               </motion.div>
@@ -143,10 +143,10 @@ const AboutSection = () => {
           viewport={{ once: true }}
         >
           {[
-            { number: "50+", label: "Projects Completed" },
-            { number: "5+", label: "Years Experience" },
-            { number: "100+", label: "Happy Clients" },
-            { number: "15+", label: "Technologies" },
+            { number: "23+", label: "Projects Completed" },
+            { number: "2+", label: "Years Experience" },
+            { number: "12+", label: "Happy Clients" },
+            { number: "10+", label: "Technologies" },
           ].map((stat, index) => (
             <motion.div
               key={index}
@@ -154,7 +154,9 @@ const AboutSection = () => {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="text-3xl font-bold text-foreground mb-2">{stat.number}</div>
+              <div className="text-3xl font-bold text-foreground mb-2">
+                {stat.number}
+              </div>
               <div className="text-foreground-500 text-sm">{stat.label}</div>
             </motion.div>
           ))}

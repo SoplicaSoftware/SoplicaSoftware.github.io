@@ -18,17 +18,15 @@ export const Navbar = () => {
   };
 
   return (
-    <HeroUINavbar
-      className="fixed top-0 z-50 bg-transparent"
-      maxWidth="full"
-    >
+    <HeroUINavbar className="fixed top-0 z-50 bg-transparent" maxWidth="full">
       <NavbarContent className="w-full" justify="end">
         {/* GitHub Link */}
         <NavbarItem>
           <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+            {" "}
             <Button
               as="a"
-              href="https://github.com/johndeveloper"
+              href="https://github.com/SoplicaSoftware"
               target="_blank"
               rel="noopener noreferrer"
               isIconOnly
