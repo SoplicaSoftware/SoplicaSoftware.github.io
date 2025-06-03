@@ -10,7 +10,18 @@ export default {
     "./node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      perspective: {
+        '1000': '1000px',
+        '1500': '1500px',
+      },
+      transformStyle: {
+        'preserve-3d': 'preserve-3d',
+      },
+      backfaceVisibility: {
+        'hidden': 'hidden',
+      },
+    },
   },
   darkMode: "class",
   plugins: [heroui()],

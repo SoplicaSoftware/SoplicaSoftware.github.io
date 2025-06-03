@@ -2,7 +2,8 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: "Kacper Rogóż - Portfolio",
-  description: "Freelance Software Engineer | SaaS Developer | Automation & Internal Tools Specialist",
+  description:
+    "Freelance Software Engineer | SaaS Developer | Automation & Internal Tools Specialist",
   navItems: [
     {
       label: "Home",

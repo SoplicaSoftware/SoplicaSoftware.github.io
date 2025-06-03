@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@heroui/button";
-import { Github, Linkedin, Twitter, Mail, Heart } from "lucide-react";
+import { Github, Linkedin, Mail, Coffee } from "lucide-react";
 
 const Footer = () => {
   const socialLinks = [
@@ -15,12 +15,6 @@ const Footer = () => {
       href: "https://www.linkedin.com/in/soplica-software",
       label: "LinkedIn",
       color: "hover:text-primary",
-    },
-    {
-      icon: <Twitter size={24} />,
-      href: "https://soplicaindustries.github.io",
-      label: "Website",
-      color: "hover:text-secondary",
     },
     {
       icon: <Mail size={24} />,
@@ -40,6 +34,7 @@ const Footer = () => {
   const scrollToSection = (href: string) => {
     if (href.startsWith("#")) {
       const element = document.querySelector(href);
+
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
@@ -54,21 +49,21 @@ const Footer = () => {
           <motion.div
             className="space-y-4"
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
+            whileInView={{ opacity: 1, y: 0 }}
           >
             <h3 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Kacper Rogóż
             </h3>
             <p className="text-foreground-600 leading-relaxed">
-              Full-stack developer focused on building complete software solutions
-              — from idea to production. Specializing in SaaS platforms, desktop
-              applications, and automation systems.
+              Full-stack developer focused on building complete software
+              solutions — from idea to production. Specializing in SaaS
+              platforms, desktop applications, and automation systems.
             </p>
             <div className="flex items-center text-foreground-500">
               <span>Made with</span>
-              <Heart className="w-4 h-4 text-danger mx-2" />
+              <Coffee className="w-4 h-4 text-amber-700 mx-2" />
               <span>using React & HeroUI</span>
             </div>
           </motion.div>
@@ -77,9 +72,9 @@ const Footer = () => {
           <motion.div
             className="space-y-4"
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
+            whileInView={{ opacity: 1, y: 0 }}
           >
             <h4 className="text-lg font-semibold text-foreground mb-4">
               Quick Links
@@ -88,8 +83,8 @@ const Footer = () => {
               {quickLinks.map((link, index) => (
                 <li key={index}>
                   <button
-                    onClick={() => scrollToSection(link.href)}
                     className="text-foreground-600 hover:text-foreground transition-colors duration-300 hover:underline"
+                    onClick={() => scrollToSection(link.href)}
                   >
                     {link.name}
                   </button>
@@ -102,9 +97,9 @@ const Footer = () => {
           <motion.div
             className="space-y-4"
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
+            whileInView={{ opacity: 1, y: 0 }}
           >
             <h4 className="text-lg font-semibold text-foreground mb-4">
               Let&apos;s Connect
@@ -119,13 +114,13 @@ const Footer = () => {
               {socialLinks.map((social, index) => (
                 <motion.a
                   key={index}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  aria-label={social.label}
                   className={`text-foreground-500 ${social.color} transition-all duration-300`}
+                  href={social.href}
+                  rel="noopener noreferrer"
+                  target="_blank"
                   whileHover={{ scale: 1.2, y: -2 }}
                   whileTap={{ scale: 0.9 }}
-                  aria-label={social.label}
                 >
                   {social.icon}
                 </motion.a>
@@ -146,41 +141,26 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-divider my-8"></div>
+        <div className="border-t border-divider my-8" />
 
         {/* Bottom Section */}
         <motion.div
           className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
+          whileInView={{ opacity: 1, y: 0 }}
         >
           <div className="text-foreground-500 text-sm">
             © {new Date().getFullYear()} Kacper Rogóż. All rights reserved.
           </div>
 
-          <div className="flex space-x-6 text-sm text-foreground-500">
-            <button
-              className="hover:text-foreground transition-colors duration-300"
-              onClick={() => window.open("/privacy-policy", "_blank")}
-            >
-              Privacy Policy
-            </button>
-            <button
-              className="hover:text-foreground transition-colors duration-300"
-              onClick={() => window.open("/terms-of-service", "_blank")}
-            >
-              Terms of Service
-            </button>
-          </div>
-
           {/* Back to Top Button */}
           <motion.button
             className="text-foreground-500 hover:text-foreground transition-colors duration-300 flex items-center space-x-2"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             whileHover={{ y: -2 }}
             whileTap={{ y: 0 }}
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
             <span className="text-sm">Back to Top</span>
             <svg
@@ -190,10 +170,10 @@ const Footer = () => {
               viewBox="0 0 24 24"
             >
               <path
+                d="M5 10l7-7m0 0l7 7m-7-7v18"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M5 10l7-7m0 0l7 7m-7-7v18"
               />
             </svg>
           </motion.button>

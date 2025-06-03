@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Card, CardBody } from "@heroui/card";
 import { Chip } from "@heroui/chip";
-import { Calendar, MapPin, ExternalLink } from "lucide-react";
+import { Calendar, MapPin, ExternalLink, GraduationCap } from "lucide-react";
 
 const ExperienceSection = () => {
   const experiences = [
@@ -118,6 +118,27 @@ const ExperienceSection = () => {
         "Implemented export functionality",
       ],
     },
+    {
+      title: "Programmer Technician",
+      company: "Zespół Szkół im. Ojca Świętego Jana Pawła II w Niepołomicach",
+      location: "Niepołomice, Poland",
+      period: "September 2020 - May 2025",
+      description:
+        "Completed comprehensive technical education in programming and software development. Awarded scholarship for outstanding academic performance in vocational subjects. Participated in certified EU-funded training courses and gained practical industry experience through summer internships.",
+      technologies: [
+        "Programming Fundamentals",
+        "Software Development",
+        "Technical Education",
+        "EU Training Courses",
+        "Industry Internships",
+      ],
+      achievements: [
+        "Awarded scholarship for outstanding academic performance",
+        "Completed certified EU-funded training courses",
+        "Gained practical industry experience through internships",
+      ],
+      isEducation: true,
+    },
   ];
 
   const containerVariants = {
@@ -125,7 +146,7 @@ const ExperienceSection = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3,
+        staggerChildren: 0.1,
       },
     },
   };
@@ -144,36 +165,35 @@ const ExperienceSection = () => {
 
   return (
     <section
-      id="experience"
       className="py-20 px-4 bg-gradient-to-b from-content1 to-background"
+      id="experience"
     >
       <div className="max-w-6xl mx-auto">
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
+          whileInView={{ opacity: 1, y: 0 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-success to-primary bg-clip-text text-transparent">
             Experience
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-success to-primary mx-auto mb-8"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-success to-primary mx-auto mb-8" />
           <p className="text-foreground-600 text-lg max-w-2xl mx-auto">
-            My professional journey in software development, from junior
-            developer to senior role
+            My journey in software development, from student to developer
           </p>
         </motion.div>
 
         <motion.div
           className="relative"
-          variants={containerVariants}
           initial="hidden"
-          whileInView="visible"
+          variants={containerVariants}
           viewport={{ once: true }}
+          whileInView="visible"
         >
           {/* Timeline Line */}
-          <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-success via-primary to-secondary"></div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-success via-primary to-secondary" />
 
           {experiences.map((exp, index) => (
             <motion.div
@@ -186,12 +206,12 @@ const ExperienceSection = () => {
               variants={itemVariants}
             >
               {/* Timeline Dot */}
-              <div className="absolute left-2 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-gradient-to-r from-primary to-secondary rounded-full border-4 border-background z-10"></div>
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-r from-primary to-secondary rounded-full border-4 border-background z-10" />
 
               <motion.div
-                className="ml-12 md:ml-0"
-                whileHover={{ scale: 1.02 }}
+                className="md:ml-0"
                 transition={{ duration: 0.3 }}
+                whileHover={{ scale: 1.02 }}
               >
                 <Card className="bg-content2/50 border border-divider hover:border-primary/50 transition-all duration-300 backdrop-blur-sm">
                   <CardBody className="p-8">
@@ -201,18 +221,22 @@ const ExperienceSection = () => {
                           {exp.title}
                         </h3>
                         <div className="flex items-center text-primary mb-2">
-                          <ExternalLink size={16} className="mr-2" />
+                          {exp.isEducation ? (
+                            <GraduationCap className="mr-2" size={16} />
+                          ) : (
+                            <ExternalLink className="mr-2" size={16} />
+                          )}
                           <span className="font-medium">{exp.company}</span>
                         </div>
                       </div>
 
                       <div className="flex flex-col md:items-end text-sm text-foreground-500">
                         <div className="flex items-center mb-1">
-                          <Calendar size={14} className="mr-2" />
+                          <Calendar className="mr-2" size={14} />
                           <span>{exp.period}</span>
                         </div>
                         <div className="flex items-center">
-                          <MapPin size={14} className="mr-2" />
+                          <MapPin className="mr-2" size={14} />
                           <span>{exp.location}</span>
                         </div>
                       </div>
@@ -231,8 +255,8 @@ const ExperienceSection = () => {
                         {exp.technologies.map((tech, techIndex) => (
                           <Chip
                             key={techIndex}
-                            size="sm"
                             color="primary"
+                            size="sm"
                             variant="bordered"
                           >
                             {tech}
@@ -252,7 +276,7 @@ const ExperienceSection = () => {
                             key={achIndex}
                             className="flex items-start text-foreground-600"
                           >
-                            <span className="w-2 h-2 bg-success rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <span className="w-2 h-2 bg-success rounded-full mt-2 mr-3 flex-shrink-0" />
                             <span className="text-sm">{achievement}</span>
                           </li>
                         ))}

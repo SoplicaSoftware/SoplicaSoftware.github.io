@@ -1,4 +1,3 @@
-
 import DefaultLayout from "@/layouts/default";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";

@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Button } from "@heroui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+
 import ProjectCard, { type Project } from "./ProjectCard";
 
 const ProjectCarousel = () => {
@@ -9,72 +10,70 @@ const ProjectCarousel = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: "rezerwacje.masujmnie.pl",
+      title: "rezerwacje.masujmnie",
       description:
-        "System rezerwacji masażu z dojazdem do klienta, podział na role wraz z możliwością ich tworzenia w oparciu o uprawnienia, definiowanie obszarów działania systemu (mapa interaktywna), generowanie voucherów pdf.",
-      image:
-        "https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      technologies: ["PHP", "Laravel", "JavaScript", "MySQL", "Bootstrap"],
+        "Massage reservation system with client visits, role-based permissions with custom role creation, service area definition (interactive map), and PDF voucher generation.",
+      image: "/rezerwacje.png",
+      technologies: ["Laravel", "PHP", "JavaScript", "MySQL", "Bootstrap"],
+      liveUrl: "https://rezerwacje.masujmnie.pl/",
       features: [
-        "System ról i uprawnień użytkowników",
-        "Interaktywna mapa obszarów działania",
-        "Generowanie voucherów PDF",
-        "Rezerwacja z dojazdem do klienta",
-        "Panel administracyjny",
+        "User role and permission system",
+        "Interactive service area mapping",
+        "PDF voucher generation",
+        "Home visit reservations",
+        "Administrative panel",
       ],
       challenges:
-        "Implementacja systemu uprawnień opartego na rolach i integracja z mapą interaktywną do definiowania obszarów obsługi.",
+        "Implementation of role-based permission system and integration with interactive map for service area definition.",
       outcome:
-        "Zwiększenie efektywności zarządzania rezerwacjami i usprawnienie procesu obsługi klientów.",
+        "Increased efficiency in reservation management and improved customer service process.",
     },
     {
       id: 2,
       title: "masazbiurowy.eu",
       description:
-        "System rezerwacji masaży dla firm. Platforma umożliwiająca firmom łatwe zarządzanie rezerwacjami masaży dla swoich pracowników.",
-      image:
-        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      technologies: ["PHP", "Laravel", "MySQL", "Vue.js", "Bootstrap"],
+        "Corporate massage reservation system. Platform enabling companies to easily manage massage reservations for their employees.",
+      image: "/masazbuiurowy.png",
+      technologies: ["Laravel", "PHP", "MySQL", "Vue.js", "Bootstrap"],
       liveUrl: "https://masazbiurowy.eu",
       features: [
-        "Rezerwacje dla firm",
-        "Zarządzanie pracownikami",
-        "System płatności",
-        "Kalendarz dostępności",
-        "Raportowanie i statystyki",
+        "Corporate reservations",
+        "Employee management",
+        "Payment system",
+        "Availability calendar",
+        "Reporting and statistics",
       ],
       challenges:
-        "Stworzenie systemu, który obsługuje zarówno indywidualnych klientów jak i firmy z wieloma pracownikami.",
+        "Creating a system that handles both individual clients and companies with multiple employees.",
       outcome:
-        "Usprawnienie procesu rezerwacji masaży w firmach i zwiększenie zadowolenia pracowników.",
+        "Streamlined massage reservation process in companies and increased employee satisfaction.",
     },
     {
       id: 3,
       title: "Zbadaj Księgę",
       description:
-        "System pozwalający monitorować zmiany właścicieli w księgach wieczystych. Automatyczne śledzenie i powiadomienia o zmianach własnościowych.",
-      image:
-        "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "System allowing monitoring of property ownership changes in land registers. Automatic tracking and notifications of ownership changes.",
+      image: "/zbadajksiege.png",
       technologies: ["PHP", "Laravel", "MySQL", "API", "Cron Jobs"],
+      liveUrl: "https://zbadajksiege.pl/",
       features: [
-        "Monitoring ksiąg wieczystych",
-        "Automatyczne powiadomienia",
-        "Historia zmian właścicieli",
-        "Dashboard analityczny",
-        "Export danych do PDF/Excel",
+        "Land register monitoring",
+        "Automatic notifications",
+        "Ownership change history",
+        "Analytics dashboard",
+        "Data export to PDF/Excel",
       ],
       challenges:
-        "Integracja z zewnętrznymi źródłami danych ksiąg wieczystych i zapewnienie aktualności informacji.",
+        "Integration with external land register data sources and ensuring information accuracy.",
       outcome:
-        "Zwiększenie transparentności rynku nieruchomości i ułatwienie monitoringu zmian własnościowych.",
+        "Increased real estate market transparency and simplified ownership change monitoring.",
     },
     {
       id: 4,
-      title: "Duende Sounds Desktop",
+      title: "Duende Sounds",
       description:
-        "Aplikacja desktopowa stworzona w Electron.js, służąca do przeglądania, kupowania i pobierania biblioteki dźwięków z serwisu internetowego. Zintegrowany ze stroną Wordpress, API i zewnętrznymi providerami usług AI.",
-      image:
-        "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "Desktop application built with Electron.js for browsing, purchasing, and downloading sound library from web service. Integrated with WordPress, API, and external AI service providers.",
+      image: "/duende.png",
       technologies: [
         "Electron.js",
         "JavaScript",
@@ -82,45 +81,45 @@ const ProjectCarousel = () => {
         "WordPress API",
         "AI Services",
       ],
+      liveUrl: "https://duendesounds.com/",
       features: [
-        "Przeglądanie biblioteki dźwięków",
-        "System zakupów i płatności",
-        "Pobieranie i zarządzanie plikami",
-        "Integracja z WordPress",
-        "Usługi AI do analizy dźwięku",
+        "Sound library browsing",
+        "Purchase and payment system",
+        "File download and management",
+        "WordPress integration",
+        "AI services for sound analysis",
       ],
       challenges:
-        "Integracja z wieloma zewnętrznymi API i zapewnienie płynnej synchronizacji między aplikacją desktopową a serwisem webowym.",
+        "Integration with multiple external APIs and ensuring smooth synchronization between desktop application and web service.",
       outcome:
-        "Stworzenie kompletnego ekosystemu do zarządzania biblioteką dźwięków z zaawansowanymi funkcjami AI.",
+        "Created complete ecosystem for sound library management with advanced AI features.",
     },
     {
       id: 5,
       title: "Swiadectwo.energy",
       description:
-        "System do zamawiania certyfikatów charakterystyki energetycznej. Łączy klientów, audytorów i pośredników nieruchomości w jednej platformie.",
-      image:
-        "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "System for ordering energy performance certificates. Connects clients, auditors and real estate agents in one platform.",
+      image: "/swiadectwo.png",
       technologies: ["PHP", "Laravel", "MySQL", "Vue.js", "Payment Gateway"],
+      liveUrl: "https://swiadectwo.energy/",
       features: [
-        "Platforma łącząca wszystkich uczestników procesu",
-        "System zleceń i płatności",
-        "Generowanie certyfikatów",
-        "Kalendarz audytorów",
-        "Zarządzanie dokumentacją",
+        "Platform connecting all process participants",
+        "Order and payment system",
+        "Certificate generation",
+        "Auditor calendar",
+        "Documentation management",
       ],
       challenges:
-        "Stworzenie systemu łączącego różne grupy użytkowników z odmiennymi potrzebami i procesami pracy.",
+        "Creating a system connecting different user groups with different needs and work processes.",
       outcome:
-        "Usprawnienie procesu wydawania certyfikatów energetycznych i zwiększenie transparentności rynku.",
+        "Streamlined energy certificate issuance process and increased market transparency.",
     },
     {
       id: 6,
       title: "edero.ai",
       description:
-        "Work in progress. Zestaw narzędzi do nowoczesnego i zautomatyzowanego tworzenia contentu na social media z wykorzystaniem sztucznej inteligencji.",
-      image:
-        "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "Work in progress. A suite of tools for modern and automated social media content creation using artificial intelligence.",
+      image: "/edero.png",
       technologies: [
         "Next.js",
         "TypeScript",
@@ -128,17 +127,18 @@ const ProjectCarousel = () => {
         "PostgreSQL",
         "Tailwind CSS",
       ],
+      liveUrl: "https://edero.ai/",
       features: [
-        "Automatyczne generowanie treści",
-        "Analiza wydajności postów",
-        "Planowanie publikacji",
-        "Integracja z social media",
+        "Automatic content generation",
+        "Post performance analysis",
+        "Publication scheduling",
+        "Social media integration",
         "AI-powered content optimization",
       ],
       challenges:
-        "Integracja z różnymi API sztucznej inteligencji i stworzenie intuicyjnego interfejsu do zarządzania treścią.",
+        "Integration with various AI APIs and creating an intuitive interface for content management.",
       outcome:
-        "Projekt w fazie rozwoju - cel to zrewolucjonizowanie sposobu tworzenia treści na social media.",
+        "Project in development phase - goal is to revolutionize the way social media content is created.",
     },
   ];
 
@@ -150,26 +150,53 @@ const ProjectCarousel = () => {
     setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length);
   };
 
-  const getProjectSlug = (title: string) => {
-    return title
-      .toLowerCase()
-      .replace(/\s+/g, "-")
-      .replace(/[^\w-]/g, "");
+  // Get the cards to display in the carousel view
+  const getVisibleCards = () => {
+    const visibleCards = [];
+    const totalCards = projects.length;
+    
+    // Show 3 cards: previous, current, next
+    for (let i = -1; i <= 1; i++) {
+      const index = (currentProject + i + totalCards) % totalCards;
+      visibleCards.push({
+        project: projects[index],
+        position: i,
+        index,
+      });
+    }
+    
+    return visibleCards;
   };
 
-  const slideVariants = {
-    enter: {
-      opacity: 0,
-      scale: 0.95,
-    },
+  const cardVariants = {
     center: {
-      opacity: 1,
+      x: 0,
       scale: 1,
+      zIndex: 5,
+      opacity: 1,
+      rotateY: 0,
     },
-    exit: {
-      opacity: 0,
-      scale: 0.95,
+    left: {
+      x: -400,
+      scale: 0.8,
+      zIndex: 3,
+      opacity: 0.7,
+      rotateY: 15,
     },
+    right: {
+      x: 400,
+      scale: 0.8,
+      zIndex: 3,
+      opacity: 0.7,
+      rotateY: -15,
+    },
+  };
+
+  const getCardVariant = (position: number) => {
+    if (position === 0) return "center";
+    if (position === -1) return "left";
+    if (position === 1) return "right";
+    return "center";
   };
 
   return (
@@ -195,45 +222,93 @@ const ProjectCarousel = () => {
           </p>
         </motion.div>
 
-        {/* Carousel Container */}
-        <div className="relative mb-8">
-          <AnimatePresence custom={currentProject} mode="wait">
-            <motion.div
-              key={currentProject}
-              animate="center"
-              className="w-full"
-              custom={currentProject}
-              exit="exit"
-              initial="enter"
-              transition={{
-                opacity: { duration: 0.3 },
-                scale: { duration: 0.3, ease: "easeInOut" },
-              }}
-              variants={slideVariants}
-            >
-              <ProjectCard
-                project={projects[currentProject]}
-                getProjectSlug={getProjectSlug}
-              />
-            </motion.div>
-          </AnimatePresence>
+        {/* 3D Carousel Container */}
+        <div className="relative mb-8 perspective-1000">
+          {/* Background glow effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-secondary/5 via-warning/5 to-secondary/5 rounded-3xl blur-3xl" />
+          
+          <div className="relative h-[720px] flex items-center justify-center overflow-hidden">
+            {getVisibleCards().map(({ project, position, index }) => (
+              <motion.div
+                key={index}
+                animate={getCardVariant(position)}
+                className="absolute cursor-pointer"
+                initial={getCardVariant(position)}
+                onClick={() => position !== 0 && setCurrentProject(index)}
+                style={{
+                  transformStyle: "preserve-3d",
+                }}
+                transition={{
+                  duration: 0.8,
+                  ease: [0.25, 0.46, 0.45, 0.94], // Custom easing for smooth motion
+                }}
+                variants={cardVariants}
+                whileHover={
+                  position === 0 
+                    ? { 
+                        scale: 1.02, 
+                        y: -10,
+                        transition: { duration: 0.3 }
+                      } 
+                    : { 
+                        scale: 0.85, 
+                        y: -5,
+                        transition: { duration: 0.3 }
+                      }
+                }
+                whileTap={
+                  position !== 0 
+                    ? { scale: 0.75 }
+                    : {}
+                }
+              >
+                <ProjectCard
+                  project={project}
+                />
+                
+                {/* Overlay for non-center cards */}
+                {position !== 0 && (
+                  <motion.div
+                    className="absolute inset-0 bg-black/20 rounded-2xl pointer-events-none"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                )}
+              </motion.div>
+            ))}
+            
+            {/* Center card spotlight effect */}
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-radial from-warning/10 to-transparent rounded-full pointer-events-none z-0"></div>
+          </div>
 
-          {/* Navigation Arrows */}
+          {/* Enhanced Navigation Arrows */}
           <Button
             isIconOnly
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-content2/80 hover:bg-content3 z-10"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-content2/90 hover:bg-content3 z-20 shadow-lg backdrop-blur-sm border-2 border-divider hover:border-warning-400 transition-all duration-300"
             onClick={prevProject}
+            size="lg"
           >
-            <ChevronLeft size={24} />
+            <ChevronLeft size={28} />
           </Button>
 
           <Button
             isIconOnly
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-content2/80 hover:bg-content3 z-10"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-content2/90 hover:bg-content3 z-20 shadow-lg backdrop-blur-sm border-2 border-divider hover:border-warning-400 transition-all duration-300"
             onClick={nextProject}
+            size="lg"
           >
-            <ChevronRight size={24} />
+            <ChevronRight size={28} />
           </Button>
+
+          {/* Enhanced floating control overlay */}
+          <div className="absolute top-4 right-4 z-20 flex gap-2">
+            <div className="flex items-center px-3 py-2 bg-content2/80 backdrop-blur-sm rounded-lg border border-divider">
+              <span className="text-xs font-medium text-foreground-600">
+                {currentProject + 1} / {projects.length}
+              </span>
+            </div>
+          </div>
         </div>
 
         {/* Project Indicators */}

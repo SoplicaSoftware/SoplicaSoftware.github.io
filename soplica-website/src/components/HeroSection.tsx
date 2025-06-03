@@ -7,24 +7,25 @@ import AnimatedGrid from "./AnimatedGrid";
 const HeroSection = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
+
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background to-content1 relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background/80 to-transparent relative overflow-hidden">
       {/* Animated Grid Background */}
       <AnimatedGrid />
-      
-      {/* Background Animation */}
-      <div className="absolute inset-0 opacity-20">
+
+      {/* Background Animation with softer blending */}
+      <div className="absolute inset-0 opacity-15">
         <motion.div
-          className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary rounded-full blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.6, 0.3],
           }}
+          className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary rounded-full blur-3xl"
           transition={{
             duration: 4,
             repeat: Infinity,
@@ -32,11 +33,11 @@ const HeroSection = () => {
           }}
         />
         <motion.div
-          className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-secondary rounded-full blur-3xl"
           animate={{
             scale: [1.2, 1, 1.2],
             opacity: [0.4, 0.2, 0.4],
           }}
+          className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-secondary rounded-full blur-3xl"
           transition={{
             duration: 3,
             repeat: Infinity,
@@ -52,13 +53,13 @@ const HeroSection = () => {
         <div className="text-center w-full">
           {/* Name Animation */}
           <motion.h1
+            animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 bg-gradient-to-r from-foreground via-primary to-secondary bg-clip-text text-transparent leading-tight"
+            initial={{ opacity: 0, y: 50 }}
             style={{
               paddingBottom: "0.2em",
               lineHeight: "1.15",
             }}
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             Kacper Rogóż
@@ -66,9 +67,9 @@ const HeroSection = () => {
 
           {/* Tagline Animation */}
           <motion.p
+            animate={{ opacity: 1, y: 0 }}
             className="text-xl md:text-2xl lg:text-3xl text-foreground-600 mb-8 font-light"
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           >
             Freelance Software Engineer | SaaS Developer | Automation & Internal
@@ -77,38 +78,38 @@ const HeroSection = () => {
 
           {/* Subtitle Animation */}
           <motion.p
+            animate={{ opacity: 1, y: 0 }}
             className="text-lg md:text-xl text-foreground-500 mb-12 max-w-2xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           >
-            Full-stack developer focused on building complete software solutions —
-            from idea to production. Specializing in web apps, desktop
+            Full-stack developer focused on building complete software solutions
+            — from idea to production. Specializing in web apps, desktop
             applications, automation, and cloud integrations.
           </motion.p>
 
           {/* CTA Buttons */}
           <motion.div
+            animate={{ opacity: 1, y: 0 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9, ease: "easeOut" }}
           >
             <Button
-              size="lg"
-              color="primary"
-              variant="shadow"
               className="font-semibold px-8 py-6 text-lg"
+              color="primary"
+              size="lg"
+              variant="shadow"
               onClick={() => scrollToSection("portfolio")}
             >
               View Portfolio
             </Button>
 
             <Button
-              size="lg"
-              variant="bordered"
               className="font-semibold px-8 py-6 text-lg"
+              size="lg"
               startContent={<Download size={20} />}
+              variant="bordered"
             >
               Download Resume
             </Button>
