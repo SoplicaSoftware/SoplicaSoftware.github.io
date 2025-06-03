@@ -80,6 +80,15 @@ const AboutSection = () => {
   const [isPersonal, setIsPersonal] = useState(false);
   const [direction, setDirection] = useState(1);
 
+  // Preload both images when component mounts
+  useEffect(() => {
+    const professionalImg = new Image();
+    const personalImg = new Image();
+    
+    professionalImg.src = "/prof_2.png";
+    personalImg.src = "/bike.JPG";
+  }, []);
+
   const professionalSkills = [
     {
       icon: <Code size={24} />,
@@ -186,7 +195,10 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="relative py-32 px-4 overflow-hidden" id="about">
+    <section
+      className="relative py-32 px-4 overflow-hidden bg-gradient-to-b from-content1/20 via-content1/40 to-content1"
+      id="about"
+    >
       {/* Seamless background blend that extends beyond section */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/5 to-transparent" />
 

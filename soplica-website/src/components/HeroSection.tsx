@@ -1,10 +1,14 @@
 import { motion } from "framer-motion";
 import { Button } from "@heroui/button";
 import { ChevronDown, Download } from "lucide-react";
+import { useState } from "react";
 
 import AnimatedGrid from "./AnimatedGrid";
+import ResumeModal from "./ResumeModal";
 
 const HeroSection = () => {
+  const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
 
@@ -14,7 +18,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background/80 to-transparent relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-b from-background via-background to-content1/20 relative overflow-hidden">
       {/* Animated Grid Background */}
       <AnimatedGrid />
 
@@ -110,6 +114,7 @@ const HeroSection = () => {
               size="lg"
               startContent={<Download size={20} />}
               variant="bordered"
+              onClick={() => setIsResumeModalOpen(true)}
             >
               Download Resume
             </Button>
@@ -134,6 +139,12 @@ const HeroSection = () => {
           </motion.button>
         </motion.div>
       </div>
+
+      {/* Resume Modal */}
+      <ResumeModal
+        isOpen={isResumeModalOpen}
+        onClose={() => setIsResumeModalOpen(false)}
+      />
     </section>
   );
 };
