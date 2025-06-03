@@ -99,7 +99,7 @@ const AboutSection = () => {
             </p>
 
             <p className="text-foreground-600 text-lg leading-relaxed">
-              {`When I'm not coding, I enjoy mountain biking and sailing — they help me stay focused and balanced. I'm driven, reliable, and always focused on good communication and long-term results.`}
+              {`Outside of work, I like to stay active with mountain biking, weightlifting, paddle boarding, running, shooting, and sailing — they help me stay grounded and clear-headed. I’m motivated, reliable, and big on good communication and making things work for the long haul.`}
             </p>
           </motion.div>
 

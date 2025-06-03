@@ -1,7 +1,8 @@
 import { Card, CardBody } from "@heroui/card";
 import { Button } from "@heroui/button";
 import { Chip } from "@heroui/chip";
-import { ExternalLink, Eye } from "lucide-react";
+import { ExternalLink, Eye, Star, Target } from "lucide-react";
+import { FiStar, FiTarget } from "react-icons/fi";
 
 interface Project {
   id: number;
@@ -44,19 +45,28 @@ const typeColor: Record<string, string> = {
 const ProjectCard = ({ project, getProjectSlug }: ProjectCardProps) => {
   const mainType = project.technologies[0] || "Project";
   const typeClass = typeColor[mainType] || "bg-gradient-to-br from-default-200 to-default-400 text-default-900 border-default-500";
-  
+
   return (
     <Card className="w-[420px] h-[700px] mx-auto rounded-2xl border-4 border-warning-400 shadow-2xl bg-gradient-to-br from-content1 via-content2 to-content1 p-1 pokemon-card relative overflow-hidden">
       {/* Holographic effect overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-transparent via-warning-200/20 to-secondary-200/20 opacity-30 rounded-2xl pointer-events-none" />
-      
+
       <CardBody className="p-0 relative z-10 h-full flex flex-col">
-        {/* Header with energy symbol */}
+        {/* Header with professional energy symbol */}
         <div className="flex items-center justify-between px-4 pt-3 pb-2 rounded-t-xl bg-gradient-to-r from-secondary/20 via-warning/20 to-secondary/20 border-b border-divider backdrop-blur-sm">
           <div className="flex items-center gap-2">
-            <div className="w-5 h-5 rounded-full bg-gradient-to-br from-secondary to-warning border border-warning-400 flex items-center justify-center">
-              <div className="w-2 h-2 bg-white rounded-full" />
-            </div>
+            {/* Professional circle icon */}
+            <span className="w-6 h-6 flex items-center justify-center rounded-full bg-gradient-to-br from-secondary to-warning border-2 border-warning-400 shadow">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <circle cx="8" cy="8" r="7" stroke="#fff" strokeWidth="2" fill="url(#grad1)" />
+                <defs>
+                  <radialGradient id="grad1" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stopColor="#fff" stopOpacity="0.9" />
+                    <stop offset="100%" stopColor="#FFD700" stopOpacity="0.7" />
+                  </radialGradient>
+                </defs>
+              </svg>
+            </span>
             <span className="text-lg font-bold tracking-wide text-foreground drop-shadow-sm truncate">
               {project.title}
             </span>
@@ -64,14 +74,6 @@ const ProjectCard = ({ project, getProjectSlug }: ProjectCardProps) => {
           <span className={`px-2 py-1 rounded-full text-xs font-bold uppercase shadow-lg border-2 ${typeClass}`}>
             {mainType}
           </span>
-        </div>
-
-        {/* Energy/HP indicator */}
-        <div className="flex justify-end px-4 pt-2">
-          <div className="flex items-center gap-1 bg-gradient-to-r from-secondary to-warning text-white px-3 py-1 rounded-full text-sm font-bold shadow-lg">
-            <span>⚡</span>
-            <span>{project.features.length * 20} HP</span>
-          </div>
         </div>
 
         {/* Image with holographic border */}
@@ -88,7 +90,7 @@ const ProjectCard = ({ project, getProjectSlug }: ProjectCardProps) => {
           </div>
         </div>
 
-        {/* Technologies as energy types - moved above sections */}
+        {/* Technologies as energy types */}
         <div className="px-4 pb-3 pt-2">
           <div className="flex flex-wrap gap-1 justify-center">
             {project.technologies.slice(0, 4).map((tech: string, index: number) => (
@@ -105,21 +107,19 @@ const ProjectCard = ({ project, getProjectSlug }: ProjectCardProps) => {
         </div>
 
         {/* Key Features and Project Scope Sections */}
-        <div className="px-4 py-2 space-y-2">
+        <div className="px-4 py-2 space-y-2 flex flex-col items-center justify-center text-center">
           {/* Key Features Section */}
-          <div className="bg-content2/50 rounded-lg p-3 border border-divider">
-            <div className="flex items-center gap-2 mb-2">
-              <div className="flex gap-1">
-                {project.technologies.slice(0, 3).map((_: string, idx: number) => (
-                  <div key={idx} className="w-4 h-4 rounded-full bg-gradient-to-br from-secondary to-warning border border-warning-400" />
-                ))}
-              </div>
+          <div className="bg-content2/50 rounded-lg p-3 border border-divider w-full max-w-[320px] mx-auto">
+            <div className="flex items-center gap-2 mb-2 justify-center">
+              {/* Professional star icon */}
+              <Star className="w-5 h-5 text-yellow-500" strokeWidth={2} />
               <span className="font-bold text-sm text-foreground">Key Features</span>
             </div>
-            <ul className="text-xs text-foreground-600 leading-tight space-y-1">
+            <ul className="text-xs text-foreground-600 leading-tight space-y-1 text-left mx-auto max-w-[260px]">
               {project.features.slice(0, 3).map((feature: string, idx: number) => (
                 <li key={idx} className="flex items-start">
-                  <span className="w-1 h-1 bg-secondary rounded-full mt-1.5 mr-2 flex-shrink-0" />
+                  {/* Professional bullet */}
+                  <span className="w-2 h-2 bg-gradient-to-br from-secondary to-warning rounded-full mt-1.5 mr-2 flex-shrink-0 border border-warning-400 shadow" />
                   {feature}
                 </li>
               ))}
@@ -127,12 +127,10 @@ const ProjectCard = ({ project, getProjectSlug }: ProjectCardProps) => {
           </div>
 
           {/* Project Scope Section */}
-          <div className="bg-content2/50 rounded-lg p-3 border border-divider">
-            <div className="flex items-center gap-2 mb-2">
-              <div className="flex gap-1">
-                <div className="w-4 h-4 rounded-full bg-gradient-to-br from-warning to-secondary border border-secondary-400" />
-                <div className="w-4 h-4 rounded-full bg-gradient-to-br from-warning to-secondary border border-secondary-400" />
-              </div>
+          <div className="bg-content2/50 rounded-lg p-3 border border-divider w-full max-w-[320px] mx-auto">
+            <div className="flex items-center gap-2 mb-2 justify-center">
+              {/* Professional target icon */}
+              <Target className="w-5 h-5 text-emerald-500" strokeWidth={2} />
               <span className="font-bold text-sm text-foreground">Project Scope</span>
             </div>
             <p className="text-xs text-foreground-600 leading-tight">
