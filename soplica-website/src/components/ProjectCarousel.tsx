@@ -10,6 +10,30 @@ const ProjectCarousel = () => {
   const projects: Project[] = [
     {
       id: 1,
+      title: "edero.ai",
+      description:
+        "Work in progress. A suite of tools for modern and automated social media content creation using artificial intelligence.",
+      image: "/edero.png",
+      technologies: [
+        "Next.js",
+        "Python",
+        "AI APIs",
+        "AWS Cloud",
+        "Tailwind CSS",
+      ],
+      liveUrl: "https://edero.ai/",
+      features: [
+        "Automatic content generation",
+        "AI-driven image and video creation",
+        "Social media management tools",
+      ],
+      challenges:
+        "Integration with various AI APIs and creating an intuitive interface for content management.",
+      outcome:
+        "Project in development phase - goal is to revolutionize the way social media content is created.",
+    },
+    {
+      id: 2,
       title: "rezerwacje.masujmnie",
       description:
         "Massage reservation system with client visits, role-based permissions with custom role creation, service area definition (interactive map), and PDF voucher generation.",
@@ -27,7 +51,7 @@ const ProjectCarousel = () => {
         "Increased efficiency in reservation management and improved customer service process.",
     },
     {
-      id: 2,
+      id: 3,
       title: "masazbiurowy.eu",
       description:
         "Corporate massage reservation system. Platform enabling companies to easily manage massage reservations for their employees.",
@@ -45,7 +69,7 @@ const ProjectCarousel = () => {
         "Streamlined massage reservation process in companies and increased employee satisfaction.",
     },
     {
-      id: 3,
+      id: 4,
       title: "Zbadaj Księgę",
       description:
         "System allowing monitoring of property ownership changes in land registers. Automatic tracking and notifications of ownership changes.",
@@ -63,7 +87,7 @@ const ProjectCarousel = () => {
         "Increased real estate market transparency and simplified ownership change monitoring.",
     },
     {
-      id: 4,
+      id: 5,
       title: "Duende Sounds",
       description:
         "Multiplatform desktop application built with Electron.js for browsing, purchasing, and downloading sound library from web service. Integrated with WordPress, API, and external AI service providers.",
@@ -86,7 +110,7 @@ const ProjectCarousel = () => {
         "Created complete ecosystem for sound library management with advanced AI features.",
     },
     {
-      id: 5,
+      id: 6,
       title: "Swiadectwo.energy",
       description:
         "System for ordering energy performance certificates. Connects clients, auditors and real estate agents in one platform.",
@@ -102,30 +126,6 @@ const ProjectCarousel = () => {
         "Creating a system connecting different user groups with different needs and work processes.",
       outcome:
         "Streamlined energy certificate issuance process and increased market transparency.",
-    },
-    {
-      id: 6,
-      title: "edero.ai",
-      description:
-        "Work in progress. A suite of tools for modern and automated social media content creation using artificial intelligence.",
-      image: "/edero.png",
-      technologies: [
-        "Next.js",
-        "Python",
-        "AI APIs",
-        "AWS Cloud",
-        "Tailwind CSS",
-      ],
-      liveUrl: "https://edero.ai/",
-      features: [
-        "Automatic content generation",
-        "AI-driven image and video creation",
-        "Social media management tools",
-      ],
-      challenges:
-        "Integration with various AI APIs and creating an intuitive interface for content management.",
-      outcome:
-        "Project in development phase - goal is to revolutionize the way social media content is created.",
     },
   ];
 
