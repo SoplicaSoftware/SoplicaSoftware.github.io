@@ -63,17 +63,17 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
     "bg-gradient-to-br from-default-200 to-default-400 text-default-900 border-default-500";
 
   return (
-    <Card className="w-full max-w-[420px] h-[600px] sm:h-[700px] mx-auto rounded-2xl border-4 border-warning-400 shadow-2xl bg-gradient-to-br from-content1 via-content2 to-content1 p-1 pokemon-card relative overflow-hidden">
+    <Card className="w-full max-w-[430px] h-[602px] sm:max-w-[450px] sm:h-[630px] mx-auto rounded-2xl border-4 border-warning-400 shadow-2xl bg-gradient-to-br from-content1 via-content2 to-content1 p-1 pokemon-card relative overflow-hidden">
       {/* Holographic effect overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-transparent via-warning-200/20 to-secondary-200/20 opacity-30 rounded-2xl pointer-events-none" />
 
       <CardBody className="p-0 relative z-10 h-full flex flex-col">
         {/* Header with professional energy symbol */}
-        <div className="flex items-center justify-between px-4 pt-3 pb-2 rounded-t-xl bg-gradient-to-r from-secondary/20 via-warning/20 to-secondary/20 border-b border-divider backdrop-blur-sm">
+        <div className="flex items-center justify-between px-3 pt-2 pb-1 rounded-t-xl bg-gradient-to-r from-secondary/20 via-warning/20 to-secondary/20 border-b border-divider backdrop-blur-sm">
           <div className="flex items-center gap-2">
             {/* Professional circle icon */}
-            <span className="w-6 h-6 flex items-center justify-center rounded-full bg-gradient-to-br from-secondary to-warning border-2 border-warning-400 shadow">
-              <svg fill="none" height="16" viewBox="0 0 16 16" width="16">
+            <span className="w-5 h-5 flex items-center justify-center rounded-full bg-gradient-to-br from-secondary to-warning border-2 border-warning-400 shadow">
+              <svg fill="none" height="12" viewBox="0 0 16 16" width="12">
                 <circle
                   cx="8"
                   cy="8"
@@ -90,33 +90,33 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                 </defs>
               </svg>
             </span>
-            <span className="text-lg font-bold tracking-wide text-foreground drop-shadow-sm truncate">
+            <span className="text-base font-bold tracking-wide text-foreground drop-shadow-sm truncate">
               {project.title}
             </span>
           </div>
           <span
-            className={`px-2 py-1 rounded-full text-xs font-bold uppercase shadow-lg border-2 ${typeClass}`}
+            className={`px-2 py-0.5 rounded-full text-xs font-bold uppercase shadow-lg border-2 ${typeClass}`}
           >
             {mainType}
           </span>
         </div>
 
         {/* Image with holographic border */}
-        <div className="flex justify-center px-4 pt-2 pb-3">
-          <div className="relative">
+        <div className="flex justify-center px-2 pt-3 pb-3">
+          <div className="relative w-full">
             <div className="absolute inset-0 bg-gradient-to-br from-secondary via-warning to-secondary rounded-lg p-1">
               <div className="w-full h-full bg-content1 rounded-lg" />
             </div>
             <img
               alt={project.title}
-              className="relative z-10 w-full max-w-80 h-36 sm:h-48 object-cover rounded-lg shadow-lg border-4 border-warning-400"
+              className="relative z-10 w-full h-44 sm:h-48 object-cover rounded-lg shadow-lg border-4 border-warning-400"
               src={project.image}
             />
           </div>
         </div>
 
         {/* Technologies as energy types */}
-        <div className="px-4 pb-3 pt-2">
+        <div className="px-3 pb-2 pt-1">
           <div className="flex flex-wrap gap-1 justify-center">
             {project.technologies
               .slice(0, 4)
@@ -134,68 +134,68 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         </div>
 
         {/* Key Features and Project Scope Sections */}
-        <div className="px-2 sm:px-4 py-2 space-y-2 flex flex-col items-center justify-center text-center">
-          {/* Key Features Section */}
-          <div className="bg-content2/50 rounded-lg p-2 sm:p-3 border border-divider w-full max-w-[320px] mx-auto">
-            <div className="flex items-center gap-2 mb-2 justify-center">
+        <div className="px-3 py-2 space-y-2 flex flex-col items-center justify-center text-center flex-1">
+          {/* Description Section */}
+          <div className="bg-content2/50 rounded-lg p-2.5 border border-divider w-full max-w-[360px] mx-auto">
+            <div className="flex items-center gap-2 mb-1.5 justify-center">
               {/* Professional star icon */}
               <Star
-                className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-500"
+                className="w-3 h-3 text-yellow-500"
                 strokeWidth={2}
               />
-              <span className="font-bold text-xs sm:text-sm text-foreground">
+              <span className="font-bold text-xs text-foreground">
+                Description
+              </span>
+            </div>
+            <p className="text-xs text-foreground-600 leading-tight text-left mx-auto max-w-[320px]">
+              {project.description}
+            </p>
+          </div>
+
+          {/* Project Scope Section */}
+          <div className="bg-content2/50 rounded-lg p-2.5 border border-divider w-full max-w-[360px] mx-auto">
+            <div className="flex items-center gap-2 mb-1.5 justify-center">
+              {/* Professional target icon */}
+              <Target
+                className="w-3 h-3 text-emerald-500"
+                strokeWidth={2}
+              />
+              <span className="font-bold text-xs text-foreground">
                 Key Features
               </span>
             </div>
-            <ul className="text-xs text-foreground-600 leading-tight space-y-1 text-left mx-auto max-w-[260px]">
+            <ul className="text-xs text-foreground-600 leading-tight space-y-0.5 text-left mx-auto max-w-[320px]">
               {project.features
                 .slice(0, 3)
                 .map((feature: string, idx: number) => (
                   <li key={idx} className="flex items-start">
                     {/* Professional bullet */}
-                    <span className="w-2 h-2 bg-gradient-to-br from-secondary to-warning rounded-full mt-1.5 mr-2 flex-shrink-0 border border-warning-400 shadow" />
-                    {feature}
+                    <span className="w-1.5 h-1.5 bg-gradient-to-br from-secondary to-warning rounded-full mt-1.5 mr-2 flex-shrink-0 border border-warning-400 shadow" />
+                    <span className="truncate">{feature}</span>
                   </li>
                 ))}
             </ul>
           </div>
-
-          {/* Project Scope Section */}
-          <div className="bg-content2/50 rounded-lg p-2 sm:p-3 border border-divider w-full max-w-[320px] mx-auto">
-            <div className="flex items-center gap-2 mb-2 justify-center">
-              {/* Professional target icon */}
-              <Target
-                className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-500"
-                strokeWidth={2}
-              />
-              <span className="font-bold text-xs sm:text-sm text-foreground">
-                Project Scope
-              </span>
-            </div>
-            <p className="text-xs text-foreground-600 leading-tight">
-              {project.description.substring(0, 100)}...
-            </p>
-          </div>
         </div>
 
         {/* Actions as attack buttons */}
-        <div className="px-2 sm:px-4 pb-4 mt-auto">
-          <div className="flex gap-2 mb-2">
+        <div className="px-3 pb-3 mt-auto">
+          <div className="flex gap-2 mb-1">
             <Button
               as="a"
               className="w-full rounded-lg font-bold shadow-lg bg-gradient-to-r from-secondary to-warning text-white border-2 border-warning-400"
               href={project.liveUrl ? project.liveUrl : "#"}
               size="sm"
-              startContent={<ExternalLink size={12} />}
+              startContent={<ExternalLink size={10} />}
               target={project.liveUrl ? "_blank" : "_self"}
             >
-              <span className="hidden sm:inline">Live Demo</span>
+              <span className="text-xs">Live Demo</span>
             </Button>
           </div>
 
           {/* Card number/rarity moved here to avoid collision */}
-          <div className="flex justify-end pt-2">
-            <span className="text-sm font-bold text-foreground-400">
+          <div className="flex justify-end pt-1">
+            <span className="text-xs font-bold text-foreground-400">
               #{project.id.toString().padStart(3, "0")} ⭐
             </span>
           </div>

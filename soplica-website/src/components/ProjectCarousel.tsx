@@ -14,14 +14,12 @@ const ProjectCarousel = () => {
       description:
         "Massage reservation system with client visits, role-based permissions with custom role creation, service area definition (interactive map), and PDF voucher generation.",
       image: "/rezerwacje.png",
-      technologies: ["Laravel", "PHP", "JavaScript", "MySQL", "Bootstrap"],
+      technologies: ["Laravel", "PHP", "JavaScript", "MySQL", "BulmaCss"],
       liveUrl: "https://rezerwacje.masujmnie.pl/",
       features: [
-        "User role and permission system",
-        "Interactive service area mapping",
+        "Reservation system",
+        "CRM and Employee management",
         "PDF voucher generation",
-        "Home visit reservations",
-        "Administrative panel",
       ],
       challenges:
         "Implementation of role-based permission system and integration with interactive map for service area definition.",
@@ -34,14 +32,12 @@ const ProjectCarousel = () => {
       description:
         "Corporate massage reservation system. Platform enabling companies to easily manage massage reservations for their employees.",
       image: "/masazbuiurowy.png",
-      technologies: ["Laravel", "PHP", "MySQL", "Vue.js", "Bootstrap"],
+      technologies: ["Laravel", "PHP", "MySQL", "JavaScript", "BulmaCss"],
       liveUrl: "https://masazbiurowy.eu",
       features: [
         "Corporate reservations",
         "Employee management",
-        "Payment system",
         "Availability calendar",
-        "Reporting and statistics",
       ],
       challenges:
         "Creating a system that handles both individual clients and companies with multiple employees.",
@@ -54,14 +50,12 @@ const ProjectCarousel = () => {
       description:
         "System allowing monitoring of property ownership changes in land registers. Automatic tracking and notifications of ownership changes.",
       image: "/zbadajksiege.png",
-      technologies: ["PHP", "Laravel", "MySQL", "API", "Cron Jobs"],
+      technologies: ["PHP", "TailWindCSS", "MySQL", "API", "Cron Jobs"],
       liveUrl: "https://zbadajksiege.pl/",
       features: [
         "Land register monitoring",
         "Automatic notifications",
         "Ownership change history",
-        "Analytics dashboard",
-        "Data export to PDF/Excel",
       ],
       challenges:
         "Integration with external land register data sources and ensuring information accuracy.",
@@ -72,21 +66,18 @@ const ProjectCarousel = () => {
       id: 4,
       title: "Duende Sounds",
       description:
-        "Desktop application built with Electron.js for browsing, purchasing, and downloading sound library from web service. Integrated with WordPress, API, and external AI service providers.",
+        "Multiplatform desktop application built with Electron.js for browsing, purchasing, and downloading sound library from web service. Integrated with WordPress, API, and external AI service providers.",
       image: "/duende.png",
       technologies: [
         "Electron.js",
-        "JavaScript",
-        "Node.js",
-        "WordPress API",
+        "Python",
         "AI Services",
+        "MS Azure"
       ],
       liveUrl: "https://duendesounds.com/",
       features: [
-        "Sound library browsing",
-        "Purchase and payment system",
+        "Sound library browsing, with advanced filters",
         "File download and management",
-        "WordPress integration",
         "AI services for sound analysis",
       ],
       challenges:
@@ -100,14 +91,12 @@ const ProjectCarousel = () => {
       description:
         "System for ordering energy performance certificates. Connects clients, auditors and real estate agents in one platform.",
       image: "/swiadectwo.png",
-      technologies: ["PHP", "Laravel", "MySQL", "Vue.js", "Payment Gateway"],
+      technologies: ["PHP", "Laravel", "MySQL", "TailWindCSS", "Payment Gateway"],
       liveUrl: "https://swiadectwo.energy/",
       features: [
         "Platform connecting all process participants",
-        "Order and payment system",
-        "Certificate generation",
-        "Auditor calendar",
-        "Documentation management",
+        "Order and payment system with referal program",
+        "Order tracking, Client and Auditor management",
       ],
       challenges:
         "Creating a system connecting different user groups with different needs and work processes.",
@@ -122,18 +111,16 @@ const ProjectCarousel = () => {
       image: "/edero.png",
       technologies: [
         "Next.js",
-        "TypeScript",
+        "Python",
         "AI APIs",
-        "PostgreSQL",
+        "AWS Cloud",
         "Tailwind CSS",
       ],
       liveUrl: "https://edero.ai/",
       features: [
         "Automatic content generation",
-        "Post performance analysis",
-        "Publication scheduling",
-        "Social media integration",
-        "AI-powered content optimization",
+        "AI-driven image and video creation",
+        "Social media management tools",
       ],
       challenges:
         "Integration with various AI APIs and creating an intuitive interface for content management.",
@@ -177,14 +164,14 @@ const ProjectCarousel = () => {
       rotateY: 0,
     },
     left: {
-      x: -400,
+      x: -480,
       scale: 0.8,
       zIndex: 3,
       opacity: 0.7,
       rotateY: 15,
     },
     right: {
-      x: 400,
+      x: 480,
       scale: 0.8,
       zIndex: 3,
       opacity: 0.7,
@@ -227,7 +214,7 @@ const ProjectCarousel = () => {
           {/* Background glow effect */}
           <div className="absolute inset-0 bg-gradient-to-r from-secondary/5 via-warning/5 to-secondary/5 rounded-3xl blur-3xl" />
           
-          <div className="relative h-[720px] flex items-center justify-center overflow-hidden">
+          <div className="relative h-[680px] sm:h-[700px] flex items-center justify-center overflow-hidden">
             {getVisibleCards().map(({ project, position, index }) => (
               <motion.div
                 key={index}
