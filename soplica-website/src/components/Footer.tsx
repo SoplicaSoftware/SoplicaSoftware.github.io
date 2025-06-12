@@ -151,8 +151,18 @@ const Footer = () => {
           viewport={{ once: true }}
           whileInView={{ opacity: 1, y: 0 }}
         >
-          <div className="text-foreground-500 text-sm">
-            © {new Date().getFullYear()} Kacper Rogóż. All rights reserved.
+          <div className="text-foreground-500 text-sm flex flex-col space-y-1 md:space-y-0">
+            <div>© {new Date().getFullYear()} Kacper Rogóż. All rights reserved.</div>
+            <div>
+              <a 
+                href="https://storyset.com/online" 
+                className="hover:text-foreground transition-colors duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Online illustrations by Storyset
+              </a>
+            </div>
           </div>
 
           {/* Back to Top Button */}
