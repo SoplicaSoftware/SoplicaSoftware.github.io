@@ -27,26 +27,6 @@ const ExperienceSection = () => {
     },
     {
       title: "Freelance Developer & System Administrator",
-      company: "Duende Sounds",
-      location: "Remote",
-      period: "May 2024 - Present",
-      description:
-        "Led the end-to-end development of a desktop application for an audio technology company, enabling users to create, manage, and generate sound effects—including AI-powered audio. Built internal tools, implemented workflow automations, and managed supporting infrastructure.",
-      technologies: [
-        "Desktop Development",
-        "AI Audio",
-        "Infrastructure",
-        "Automation",
-        "Cloud",
-      ],
-      achievements: [
-        "Delivered complete desktop application from concept to production",
-        "Implemented AI-powered audio generation features",
-        "Built internal workflow automation tools",
-      ],
-    },
-    {
-      title: "Freelance Developer & System Administrator",
       company: "Actiflow Sp. z o.o.",
       location: "Remote",
       period: "May 2023 - Present",
@@ -63,6 +43,26 @@ const ExperienceSection = () => {
         "Built complete real estate SaaS platform from scratch",
         "Implemented reliable web scraping systems",
         "Managed full deployment and infrastructure",
+      ],
+    },
+    {
+      title: "Freelance Developer & System Administrator",
+      company: "Duende Sounds",
+      location: "Remote",
+      period: "May 2024 - June 2025",
+      description:
+        "Led the end-to-end development of a desktop application for an audio technology company, enabling users to create, manage, and generate sound effects—including AI-powered audio. Built internal tools, implemented workflow automations, and managed supporting infrastructure.",
+      technologies: [
+        "Desktop Development",
+        "AI Audio",
+        "Infrastructure",
+        "Automation",
+        "Cloud",
+      ],
+      achievements: [
+        "Delivered complete desktop application from concept to production",
+        "Implemented AI-powered audio generation features",
+        "Built internal workflow automation tools",
       ],
     },
     {
