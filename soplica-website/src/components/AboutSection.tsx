@@ -431,7 +431,7 @@ const AboutSection = () => {
                   {(!isPersonal
                     ? [
                         { number: "23+", label: "Projects Completed" },
-                        { number: "2+", label: "Years Experience" },
+                        { number: "3+", label: "Years Experience" },
                         { number: "12+", label: "Happy Clients" },
                         { number: "10+", label: "Technologies" },
                       ]
