@@ -26,12 +26,12 @@ const ExperienceSection = () => {
       ],
     },
     {
-      title: "Freelance Developer & System Administrator",
+      title: "Developer & System Administrator",
       company: "Actiflow Sp. z o.o.",
       location: "Remote",
       period: "May 2023 - Present",
       description:
-        "Led the full development lifecycle of real estate SaaS platforms—from research and design to implementation, testing, deployment, and ongoing support. Created and maintain web scrapers that provide reliable and continuous data collection and processing.",
+        "Led the full development lifecycle of real estate SaaS platforms—from research and design to implementation, testing, deployment, and ongoing support. Since September 2025, I serve as Lead Developer, responsible for project planning, technology selection, and managing the development team. Created and maintain web scrapers that provide reliable and continuous data collection and processing.",
       technologies: [
         "SaaS Development",
         "Web Scrapers",
@@ -46,7 +46,7 @@ const ExperienceSection = () => {
       ],
     },
     {
-      title: "Freelance Developer & System Administrator",
+      title: "Developer & System Administrator",
       company: "Duende Sounds",
       location: "Remote",
       period: "May 2024 - June 2025",
@@ -79,7 +79,7 @@ const ExperienceSection = () => {
         "Cloud Deployment",
       ],
       achievements: [
-        "Delivered 20+ successful client projects",
+        "Delivered 26+ successful client projects",
         "Built diverse range of applications and tools",
         "Established long-term client relationships",
       ],
@@ -198,11 +198,10 @@ const ExperienceSection = () => {
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
-              className={`relative mb-12 ${
-                index % 2 === 0
-                  ? "md:pr-1/2 md:text-right"
-                  : "md:pl-1/2 md:ml-auto"
-              }`}
+              className={`relative mb-12 ${index % 2 === 0
+                ? "md:pr-1/2 md:text-right"
+                : "md:pl-1/2 md:ml-auto"
+                }`}
               variants={itemVariants}
             >
               {/* Timeline Dot */}

@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "edero.ai",
-    "description": "Work in progress. A suite of tools for modern and automated social media content creation using artificial intelligence.",
+    "description": "Unfortunately, the project did not succeed marketing-wise, but I learned a lot from the process. A suite of tools for modern and automated social media content creation using artificial intelligence.",
     "image": "/edero.png",
     "technologies": ["Next.js", "Python", "AI APIs", "AWS Cloud", "Tailwind CSS"],
     "liveUrl": "https://edero.ai/",
@@ -12,7 +12,37 @@
       "Social media management tools"
     ],
     "challenges": "Integration with various AI APIs and creating an intuitive interface for content management.",
-    "outcome": "Project in development phase - goal is to revolutionize the way social media content is created."
+    "outcome": "While the project did not achieve market success, it served as a valuable learning experience in full-stack AI development."
+  },
+  {
+    "id": 8,
+    "title": "agentreels.io",
+    "description": "A Laravel-based platform that allows for independent and automated creation of real estate advertisements, streamlining the marketing process for agents.",
+    "image": "/agentreels.png",
+    "technologies": ["Laravel", "PHP", "FFmpeg", "Queue Workers", "MySQL"],
+    "liveUrl": "https://agentreels.io/",
+    "features": [
+      "Automated video ad creation",
+      "Real estate property processing",
+      "Marketing automation"
+    ],
+    "challenges": "Orchestrating complex video rendering pipelines and ensuring high-quality output automatically.",
+    "outcome": "A robust platform capability of generating professional real estate ads at scale."
+  },
+  {
+    "id": 9,
+    "title": "tracker.estate",
+    "description": "A project allowing monitoring of real estate market changes and finding competitor listings added by the user. Provides detailed insights and tracking capabilities.",
+    "image": "/tracker.png",
+    "technologies": ["Python", "Laravel", "Web Scraping", "Data Analysis"],
+    "liveUrl": "https://tracker.estate/",
+    "features": [
+      "Real estate market monitoring",
+      "Competitor listing tracking",
+      "Market change analysis"
+    ],
+    "challenges": "Building reliable scrapers for multiple platforms and normalizing data for accurate analysis.",
+    "outcome": "Comprehensive tool for gaining competitive advantage in the real estate market."
   },
   {
     "id": 2,
